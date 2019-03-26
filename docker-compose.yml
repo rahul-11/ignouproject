@@ -1,0 +1,28 @@
+version: '3'
+services:
+  mondodb:
+    image: 'mongo'
+  client:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./client
+    volumes:
+      - app/node_modules
+      - ./client:/app
+  nginx:
+    restart: on-failure
+    build:
+      dockerfile: dockerfile.dev
+      context: ./nginx
+    ports:
+      - '3050:80'
+  api:
+    build:
+      dockerfile: dockerfile.dev
+      context: ./server
+    volumes:
+      - /app/node_modules
+      - ./server:/app
+    environment:
+      - MONGOURI= mongodb
+      - JWT_SECRET
