@@ -2,8 +2,8 @@ sudo: required
 services:
   - docker
 before_install:
-  - docker build -t rahulgupta1199/react-test ./client/Dockerfile.dev ./client
-  - docker build -t rahulgupta1199/server-test ./server/Dockerfile.dev ./server
+  - docker build -t rahulgupta1199/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t rahulgupta1199/server-test  -f ./server/Dockerfile.dev ./server
 script:
   - docker run rahulgupta1199/react-test npm test -- --coverage
   - docker run rahulgupta1199/server-test npm run test -- --coverage
