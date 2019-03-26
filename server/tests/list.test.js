@@ -1,12 +1,13 @@
 const request = require('supertest');
 const mongoose = require('mongoose');
 const app = require('../app');
+const keys = require('../config/keys')
 
-beforeAll(async(done)=>{
-  mongoose.connect("mongodb://localhost/test-whish", ()=>{
-    mongoose.connection.db.dropDatabase(()=> done())
+beforeAll((done)=>{
+  mongoose.connect(keys.mongoURI+"/test", function(){
+    mongoose.connection.db.dropDatabase(() => done())
   });
-});
+})
 
 describe('Lists tests using valid inputs', async()=>{
   let token, listId;

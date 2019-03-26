@@ -1,9 +1,11 @@
 const request = require('supertest');
 const mongoose = require('mongoose');
 const app = require('../app');
+const keys = require('../config/keys')
 
 beforeAll((done)=>{
-  mongoose.connect("mongodb://localhost/test-whish", function(){
+  console.log(keys.mongoURI);
+  mongoose.connect(keys.mongoURI+"/test", function(){
     mongoose.connection.db.dropDatabase(() => done())
   });
 })
