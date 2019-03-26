@@ -1,0 +1,15 @@
+.create-list{
+  display: flex;
+  flex-direction: row;
+  align-content: center; 
+}
+
+.create-list i{
+  margin-right: 40px;
+  margin-left: 20px;
+  margin-top: 3px;
+}
+
+#add-btn{
+  margin-left: 10px;
+}

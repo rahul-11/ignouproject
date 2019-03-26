@@ -1,0 +1,26 @@
+.landing_page{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+  min-height: 90vh;
+  background: url('./landing_cover.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.landing_form{
+  margin: 20px;
+  min-width: 30%;
+  min-height: 60vh;
+}
+
+#log_out{
+  cursor: pointer;
+} 
+
+.landing_form{
+  min-height: 60vh;
+}
