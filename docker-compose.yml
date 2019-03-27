@@ -14,13 +14,13 @@ services:
   nginx:
     restart: on-failure
     build:
-      dockerfile: dockerfile.dev
+      dockerfile: Dockerfile.dev
       context: ./nginx
     ports:
       - '3050:80'
   api:
     build:
-      dockerfile: dockerfile.dev
+      dockerfile: Dockerfile.dev
       context: ./server
     volumes:
       - /app/node_modules
