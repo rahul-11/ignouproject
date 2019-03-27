@@ -1,7 +1,9 @@
 version: '3'
 services:
-  mondodb:
+  mongodb:
     image: 'mongo'
+    ports:
+      - "27017:27017"
   client:
     build:
       dockerfile: Dockerfile.dev
@@ -23,6 +25,8 @@ services:
     volumes:
       - /app/node_modules
       - ./server:/app
+    links:
+      - mongodb
     environment:
       - MONGOURI= mongodb
       - JWT_SECRET
