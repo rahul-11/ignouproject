@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Field, reduxForm} from 'redux-form';
-import {addItem, fetchList} from '../../actions';
+import {addItem} from '../../actions';
 
 class ItemCreate extends React.Component{
   renderInput =({input, placeholder})=>{

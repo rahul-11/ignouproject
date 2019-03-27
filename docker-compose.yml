@@ -28,5 +28,6 @@ services:
     links:
       - mongodb
     environment:
+      - NODE_ENV='ci'
       - MONGOURI= mongodb
       - JWT_SECRET

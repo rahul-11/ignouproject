@@ -3,7 +3,7 @@ if(process.env.NODE_ENV === 'production'){
 }
 if(process.env.NODE_ENV === 'ci'){
   module.exports = {
-    mongoURI: 'mongodb://127.0.0.1:27017/server',
+    mongoURI: process.env.MONGOURI,
     secret: "ncdrejbgklrcibewriobfklaca"
   }
 }
