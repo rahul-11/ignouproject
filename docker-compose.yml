@@ -9,7 +9,7 @@ services:
       dockerfile: Dockerfile.dev
       context: ./client
     volumes:
-      - app/node_modules
+      - /app/node_modules
       - ./client:/app
   nginx:
     restart: on-failure
