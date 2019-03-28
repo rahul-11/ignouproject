@@ -1,4 +1,4 @@
 module.exports ={
-  mongoURI: process.env.MONGOURI,
-  secret: process.env.JWT_SECRET
+  mongoURI: "mongodb://127.0.0.1:27017/worthero",
+    secret: "ncdrejbgklrcibewriobfklaca"
 }

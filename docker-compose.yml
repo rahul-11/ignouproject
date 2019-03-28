@@ -29,5 +29,6 @@ services:
       - mongodb
     environment:
       - NODE_ENV='ci'
-      - MONGOURI= mongodb
+      - MONGO_CLIENT= mongodb
+      - MONGO_HOST='27017'
       - JWT_SECRET
