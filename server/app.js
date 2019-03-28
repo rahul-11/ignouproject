@@ -10,12 +10,10 @@ const User = require('./models/User');
 
 
 mongoose.Promise = global.Promise;
-try{
-  mongoose.connect(keys.mongoURI);
-}
-catch(err){
-  console.log("Cannot connect to MongoDB");
-}
+mongoose.connect(keys.mongoURI, {useCreateIndex: true})
+.then(()=> console.log("MogoDB connected!"))
+.catch(err => console.log(err));
+
 
 app.use(bodyParser.json());
 app.use(cors());
