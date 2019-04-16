@@ -15,5 +15,5 @@ spec:
       containers:
         - name: client
           image: rahulgupta1199/worthero-client
-          port:
+          ports:
             - containerPort: 3000

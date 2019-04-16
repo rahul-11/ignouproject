@@ -23,7 +23,7 @@ spec:
             - containerPort: 27017
           volumeMounts:
             - name: mongodb-storage
-              mount-path: /data/db
+              mountPath: /data/db
               subPath: mongodb
 
 
