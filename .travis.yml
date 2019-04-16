@@ -5,4 +5,4 @@ before_install:
   - docker build -t rahulgupta1199/react  ./client
   - docker build -t rahulgupta1199/server  ./server
 script:
-  - docker-compose up
+  
