@@ -10,7 +10,7 @@ spec:
   template:
     metadata:
       labels:
-        componnet: mongodb
+        component: mongodb
     spec:
       volumes:
         - name: mongodb-storage
