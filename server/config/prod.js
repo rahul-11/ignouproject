@@ -1,5 +1,5 @@
 module.exports ={
-  mongoURI: `mongodb://${process.env.MONGOHOST}:${process.env.MONGOPORT}/${process.env.MONGODBNAME}`,
+  mongoURI: String(`mongodb://${process.env.MONGOHOST}:${process.env.MONGOPORT}/${process.env.MONGODBNAME}`),
   secret: "ncdrejbgklrcibewriobfklaca"
 }
 
