@@ -1,7 +1,7 @@
 import axios from 'axios';
 import * as type from './types';
 
-const baseUrl = "http://localhost:5000"
+// const baseUrl = "http://localhost:5000"
 
 export const isSignedIn = ()=> async dispatch =>{
   const token = localStorage.getItem('token');
