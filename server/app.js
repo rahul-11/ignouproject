@@ -7,10 +7,13 @@ const app = express();
 
 const User = require('./models/User');
 
-
+const prod = require('./config/prod');
 
 mongoose.Promise = global.Promise;
-mongoose.connect(keys.mongoURI, {useCreateIndex: true})
+const mongoUri = keys.mongoURI;
+console.log(process.env.NODE_ENV);
+console.log(prod.mongoURI);
+mongoose.connect(mongoUri, {useCreateIndex: true})
 .then(()=> console.log("MogoDB connected!"))
 .catch(err => console.log(err));
 
