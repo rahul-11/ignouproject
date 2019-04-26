@@ -1,7 +1,8 @@
 import axios from 'axios';
 import * as type from './types';
+import keys from './keys';
 
-// const baseUrl = "http://localhost:5000"
+const baseUrl = keys.baseUrl;
 
 export const isSignedIn = ()=> async dispatch =>{
   const token = localStorage.getItem('token');
@@ -45,7 +46,7 @@ export const signOut = (callback) => async (dispatch)=>{
 export const userLists = () => async dispatch =>{
   const token = localStorage.getItem('token');
   try{
-    const res = await axios.get(`${baseUrl}/api/user/lists`, {headers: {'authorization': token}});
+    const res = await axios.get(`${baseUrl}/user/lists`, {headers: {'authorization': token}});
     dispatch({type: type.USER_LISTS, payload: res.data});
   }
   catch(err){
@@ -56,7 +57,7 @@ export const userLists = () => async dispatch =>{
 export const createList = (data) => async dispatch=>{
   const token = localStorage.getItem('token');
   try{
-    const res = await axios.post(`${baseUrl}/api/list/new`, data,{headers: {'authorization': token}});
+    const res = await axios.post(`${baseUrl}/list/new`, data,{headers: {'authorization': token}});
     if(res.status === 400){
       dispatch({type: type.CREATE_LIST_ERROR});
     }
@@ -71,7 +72,7 @@ export const createList = (data) => async dispatch=>{
 export const deleteList = (list_id, callback) => async dispatch =>{
   const token = localStorage.getItem('token');
   try{
-    const res = await axios.delete(`${baseUrl}/api/list/${list_id}`, {headers: {'authorization': token}});
+    const res = await axios.delete(`${baseUrl}/list/${list_id}`, {headers: {'authorization': token}});
 
     if(res.status !== 200){
       dispatch({type: type.DELETE_LIST_ERROR});
@@ -87,7 +88,7 @@ export const deleteList = (list_id, callback) => async dispatch =>{
 export const fetchList = (list_id) => async dispatch =>{
   const token = localStorage.getItem('token');
   try{
-    const res = await axios.get(`${baseUrl}/api/list/${list_id}`, {headers: {'authorization': token}});
+    const res = await axios.get(`${baseUrl}/list/${list_id}`, {headers: {'authorization': token}});
 
     if(!res.data._id){
       dispatch({type: type.FETCH_LIST_ERROR});
@@ -107,7 +108,7 @@ export const addItem = (data, list_id) => async dispatch =>{
   try{
     const {item_name, item_url} = data;
     const res = await axios.post(
-      `${baseUrl}/api/list/${list_id}/new`,
+      `${baseUrl}/list/${list_id}/new`,
       {name: item_name, url: item_url}, {headers: {'authorization': token}}
     );
     if(res.status === 422 || res.status === 400){
@@ -124,7 +125,7 @@ export const deleteItem = (list_id, item_id)=> async dispatch =>{
   const token = localStorage.getItem('token');
   // try{
     const res = await axios.delete(
-    `${baseUrl}/api/list/${list_id}/item`, 
+    `${baseUrl}/list/${list_id}/item`, 
     {headers: {'authorization': token}, data: {'itemId': item_id}}
     );
     
