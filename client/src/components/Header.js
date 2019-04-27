@@ -31,7 +31,7 @@ class Header extends React.Component{
       // <div className="ui secondary pointing menu">
         <div className="navbar">
           <div className="brand_logo">
-            <Link className="item" to="/">Brand</Link>
+            <Link className="item" to="/">Worthero</Link>
           </div>
           {this.renderHeaderTabs()}
         </div>
