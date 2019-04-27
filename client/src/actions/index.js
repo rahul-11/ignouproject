@@ -27,8 +27,6 @@ export const signIn = (data, callback) => async (dispatch) =>{
 export const signUp = (data, callback) => async (dispatch) =>{
   try{
     const res = await axios.post(`${baseUrl}/signup`, data);
-    console.log('the Base url is:'+ baseUrl);
-    console.log(process.env.WEB_ENV);
     localStorage.setItem('token', res.data.token);
     dispatch({type: type.SIGN_UP, payload: res.data}); 
     callback();
