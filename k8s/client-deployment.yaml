@@ -17,6 +17,3 @@ spec:
           image: rahulgupta1199/worthero-client
           ports:
             - containerPort: 3000
-          env:
-            - name: WEB_ENV
-              value: prod

@@ -1,5 +1,5 @@
-if(process.env.WEB_ENV){
-  if(process.env.WEB_ENV === 'prod'){
+if(process.env.NODE_ENV){
+  if(process.env.NODE_ENV === 'production'){
     module.exports = {
       baseUrl : '/api'
     }
@@ -8,7 +8,7 @@ if(process.env.WEB_ENV){
 
 else{
   module.exports = {
-    baseUrl : "/api"
+    baseUrl : "http://localhost/api"
   }
 }
 
