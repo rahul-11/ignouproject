@@ -11,3 +11,9 @@ else{
     baseUrl : "/api"
   }
 }
+
+/**
+ * This is the temporary solution for making requests 
+ * to the backend in production environment.
+ * -> Need to implement the Environment variables.
+ *  */
