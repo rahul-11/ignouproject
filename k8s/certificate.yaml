@@ -9,12 +9,12 @@ spec:
     kind: ClusterIssuer
   commonName: worthero.com
   dnsNames:
-    - worthero.com
-    - www.worthero.com
+  - worthero.com
+  - www.worthero.com
   acme:
     config:
-      - http01:
-          ingressClass: nginx
-        domains:
-          - worthero.com
-          - www.worthero.com
+    - http01:
+        ingressClass: nginx
+      domains:
+      - worthero.com
+      - www.worthero.com
