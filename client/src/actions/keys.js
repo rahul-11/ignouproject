@@ -4,6 +4,11 @@ if(process.env.NODE_ENV){
       baseUrl : '/api'
     }
   }
+  else{
+    module.exports = {
+      baseUrl : "http://localhost/api"
+    }
+  }
 }
 
 else{
@@ -13,7 +18,10 @@ else{
 }
 
 /**
- * This is the temporary solution for making requests 
- * to the backend in production environment.
- * -> Need to implement the Environment variables.
+ * For creating and accessing other environment variables:
+ *  prefix with REACT_APP_ 
+ *  NODE_ENV is default environment variable
+ *  start -> 'development'
+ *  test -> 'test'
+ *  build -> 'production'
  *  */
