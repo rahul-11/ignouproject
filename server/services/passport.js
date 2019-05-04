@@ -26,7 +26,6 @@ const localLogin = new LocalStrategy(localOptions, async function(email, passwor
 
 
 // Token authentication
-
 const jwtOptions = {
   jwtFromRequest: ExtractJwt.fromHeader('authorization'),
   secretOrKey: keys.secret

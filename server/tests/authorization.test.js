@@ -12,7 +12,7 @@ beforeAll((done)=>{
 
 describe('Authorization using valid inputs', ()=>{
   it('can signup to app', async()=>{
-    const response = await request(app).post('/signup')
+    const response = await request(app).post('/api/signup')
       .send({
         first_name : "tester1",
         last_name: "suite",
@@ -25,7 +25,7 @@ describe('Authorization using valid inputs', ()=>{
   });
 
   it('can signin to the app', async()=>{
-    const response = await request(app).post('/signin')
+    const response = await request(app).post('/api/signin')
       .send({
         email: "tester1@test",
         password: "tester"

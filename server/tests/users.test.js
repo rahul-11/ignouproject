@@ -12,7 +12,7 @@ beforeAll((done)=>{
 describe("User routes tests, using valid inputs", async()=>{
   let token;
   beforeAll(async(done)=>{
-    const response = await request(app).post('/signup')
+    const response = await request(app).post('/api/signup')
       .send({
         first_name : "tester",
         last_name: "suite",

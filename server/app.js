@@ -11,9 +11,7 @@ const prod = require('./config/prod');
 
 mongoose.Promise = global.Promise;
 const mongoUri = keys.mongoURI;
-console.log(process.env.NODE_ENV);
-console.log(prod.mongoURI);
-mongoose.connect(mongoUri, {useCreateIndex: true})
+mongoose.connect(mongoUri+"/worthero", {useCreateIndex: true})
 .then(()=> console.log("MogoDB connected!"))
 .catch(err => console.log(err));
 
