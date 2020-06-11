@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js --ignore tests",
+    "dev": "nodemon index.js --ignore tests",
     "test": "jest"
   },
   "author": "Rahul Gupta",
@@ -14,7 +15,7 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
-    "express": "^4.16.4",
+    "express": "^4.17.1",
     "jest": "^24.1.0",
     "jwt-simple": "^0.5.5",
     "mongoose": "^5.4.8",
